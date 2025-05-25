@@ -1316,6 +1316,7 @@ function $m_Lin_diagraph_controller_DocumentCtl$() {
   return $n_Lin_diagraph_controller_DocumentCtl$;
 }
 function $f_Lin_diagraph_controller_HeaderCtl__loadJsonFromLocal__V($thiz) {
+  $f_Lin_diagraph_controller_HeaderCtl__removeOldGraph__V($thiz);
   var input = document.createElement("input");
   input.type = "file";
   input.accept = ".json";

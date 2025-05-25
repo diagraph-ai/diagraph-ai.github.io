@@ -17,6 +17,7 @@ import scala.scalajs.js
 trait HeaderCtl {
 
   def loadJsonFromLocal(): Unit = {
+    removeOldGraph()
     val input = document.createElement("input").asInstanceOf[html.Input]
     input.`type` = "file"
     input.accept = ".json"
