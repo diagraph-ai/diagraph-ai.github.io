@@ -10,7 +10,7 @@ object Toolbar {
   def toolbar(): html.Div = {
     val element = createElement[Div]
     element.style.cssText = toolbarCss
-    element.appendChild(toolbarIcon("/versionedAssets/images/square-light.svg"))
+    element.appendChild(toolbarIcon("./public/images/square-light.svg"))
     element
   }
 

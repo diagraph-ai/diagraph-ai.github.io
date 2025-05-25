@@ -35,7 +35,7 @@ object Header extends HeaderCtl {
 
   private def headerDivNavTitle() = {
     val element  = createElement[Anchor]
-    val iconPath = "/versionedAssets/images/favicon.svg"
+    val iconPath = "./public/images/favicon.svg"
     element.innerHTML =
       s"""<img src="$iconPath" alt="Theme Icon" style="width: 36px; height: 36px; vertical-align: middle;">
          |<span style="vertical-align: middle;">Diagraph</span>""".stripMargin
@@ -84,7 +84,7 @@ object Header extends HeaderCtl {
 
   private def updateThemeIcon(element: html.Anchor): Unit = {
     val iconPath =
-      if theme == "light" then "/versionedAssets/images/light-theme.svg" else "/versionedAssets/images/dark-theme.svg"
+      if theme == "light" then "./public/images/light-theme.svg" else "./public/images/dark-theme.svg"
     element.innerHTML = s"""<img src="$iconPath" alt="Theme Icon" style="width: 24px; height: 24px;">"""
   }
 

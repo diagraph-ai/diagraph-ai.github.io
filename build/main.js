@@ -13625,7 +13625,7 @@ function $p_Lin_diagraph_views_Header$__headerDivNavLeft__Lorg_scalajs_dom_HTMLE
 }
 function $p_Lin_diagraph_views_Header$__headerDivNavTitle__Lorg_scalajs_dom_HTMLAnchorElement($thiz) {
   var element = $m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLAnchorElement.getClassOf()));
-  element.innerHTML = $m_sc_StringOps$().stripMargin$extension__T__C__T("<img src=\"/versionedAssets/images/favicon.svg\" alt=\"Theme Icon\" style=\"width: 36px; height: 36px; vertical-align: middle;\">\n         |<span style=\"vertical-align: middle;\">Diagraph</span>", 124);
+  element.innerHTML = $m_sc_StringOps$().stripMargin$extension__T__C__T("<img src=\"./public/images/favicon.svg\" alt=\"Theme Icon\" style=\"width: 36px; height: 36px; vertical-align: middle;\">\n         |<span style=\"vertical-align: middle;\">Diagraph</span>", 124);
   element.style.cssText = "\n      font-size: 24px;\n      font-weight: bold;\n      text-decoration: none;\n      background-color: #008476;\n      color: #eee;\n      padding: 5px;\n      cursor: pointer;\n      border-radius: 5px;\n    ";
   return element;
 }
@@ -13669,7 +13669,7 @@ function $p_Lin_diagraph_views_Header$__headerDivNavTheme__Lorg_scalajs_dom_HTML
   return element;
 }
 function $p_Lin_diagraph_views_Header$__updateThemeIcon__Lorg_scalajs_dom_HTMLAnchorElement__V($thiz, element) {
-  var iconPath = (($thiz.Lin_diagraph_views_Header$__f_theme === "light") ? "/versionedAssets/images/light-theme.svg" : "/versionedAssets/images/dark-theme.svg");
+  var iconPath = (($thiz.Lin_diagraph_views_Header$__f_theme === "light") ? "./public/images/light-theme.svg" : "./public/images/dark-theme.svg");
   element.innerHTML = (("<img src=\"" + iconPath) + "\" alt=\"Theme Icon\" style=\"width: 24px; height: 24px;\">");
 }
 function $p_Lin_diagraph_views_Header$__updateCircleFillColor__V($thiz) {
