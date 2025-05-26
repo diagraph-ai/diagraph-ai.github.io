@@ -1469,6 +1469,12 @@ function $f_Lin_diagraph_controller_HeaderCtl__removeOldGraph__V($thiz) {
   var \u03b41$ = $m_Lin_diagraph_objects_Cache$().mainSVG__Lorg_scalajs_dom_HTMLElement();
   $x_5.foreach__F1__V(new $c_sjsr_AnonFunction1_$$Lambda$3aa60c34ef08a878abffbf4628007cc68fa3c7ab(((oldChild) => \u03b41$.removeChild(oldChild))));
 }
+function $f_Lin_diagraph_controller_HeaderCtl__reloadGraph__V($thiz) {
+  $f_Lin_diagraph_controller_HeaderCtl__removeOldGraph__V($thiz);
+  var this$1 = $n($m_Lin_diagraph_objects_Cache$().Lin_diagraph_objects_Cache$__f_mNode);
+  var parent = $m_Lin_diagraph_objects_Cache$().mainSVG__Lorg_scalajs_dom_HTMLElement();
+  $f_Lin_diagraph_controller_NodeCtl__render__Lorg_scalajs_dom_HTMLElement__V(this$1, parent);
+}
 function $f_Lin_diagraph_controller_HeaderCtl__saveGraphToLocal__V($thiz) {
   var graphName = $as_T(window.prompt("Graph Name: ", "default"));
   if ((graphName === null)) {
@@ -2000,7 +2006,6 @@ function $m_Lin_diagraph_objects_Cache$() {
 }
 /** @constructor */
 function $c_Lin_diagraph_objects_Constants$() {
-  this.Lin_diagraph_objects_Constants$__f_LIGHT = null;
   this.Lin_diagraph_objects_Constants$__f_SVG_NS = null;
   this.Lin_diagraph_objects_Constants$__f_HEADER = null;
   this.Lin_diagraph_objects_Constants$__f_ANCHOR = null;
@@ -2052,7 +2057,6 @@ function $c_Lin_diagraph_objects_Constants$() {
   this.Lin_diagraph_objects_Constants$__f_headerDivNavLinkCss = null;
   this.Lin_diagraph_objects_Constants$__f_headerDivNavTitleCss = null;
   this.Lin_diagraph_objects_Constants$__f_headerGraphSelectCss = null;
-  this.Lin_diagraph_objects_Constants$__f_LIGHT = "light";
   this.Lin_diagraph_objects_Constants$__f_SVG_NS = "http://www.w3.org/2000/svg";
   this.Lin_diagraph_objects_Constants$__f_HEADER = "header";
   this.Lin_diagraph_objects_Constants$__f_ANCHOR = "a";
@@ -2235,7 +2239,7 @@ function $f_Lin_diagraph_views_NodeSvgView__nodeSvgView__Lorg_scalajs_dom_HTMLEl
   arrowM.id = "arrow";
   var path = $m_Lin_diagraph_views_package$().createElement__T__O("path");
   path.setAttribute("d", "M 0 0 L 5 2.5 L 0 5 z");
-  path.style.fill = "#333";
+  path.style.fill = "rgb(119, 119, 119)";
   arrowM.appendChild(path);
   defs.appendChild(arrowM);
   element.appendChild(defs);
@@ -2244,20 +2248,8 @@ function $f_Lin_diagraph_views_NodeSvgView__nodeSvgView__Lorg_scalajs_dom_HTMLEl
   element.id = ($n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_id + "-svg");
   return element;
 }
-function $f_Lin_diagraph_views_NodeTextView__nodeTextView__Lorg_scalajs_dom_HTMLDivElement($thiz) {
-  var content = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n          overflow: auto;\n          box-sizing: border-box;\n          padding: 5px;\n          color: #333;\n          border-radius: 5px;\n          min-width: 100px;\n        ");
-  content.innerHTML = $n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_text;
-  content.setAttribute("data-ph", "--text--");
-  content.contentEditable = "true";
-  content.oninput = ((e) => {
-    $n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_text = $as_T(content.innerHTML);
-    var this$3 = $n($as_Lin_diagraph_models_Node($thiz));
-    $f_Lin_diagraph_controller_NodeCtl__updateSize__V(this$3);
-  });
-  return content;
-}
 function $f_Lin_diagraph_views_NodeTitleView__createTitleDiv__Lorg_scalajs_dom_HTMLDivElement($thiz) {
-  var content = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n              overflow: auto;\n              position: fixed;\n              box-sizing: border-box;\n              padding: 5px;\n              color: #333;\n              border-radius: 5px;\n              min-width: 100px;\n            ");
+  var content = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), (("\n              overflow: auto;\n              position: fixed;\n              box-sizing: border-box;\n              padding: 5px;\n              color: " + $m_Lin_diagraph_objects_Constants$().color__T()) + ";\n              border-radius: 5px;\n              min-width: 100px;\n            "));
   content.innerHTML = $n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_title;
   content.setAttribute("data-ph", "--text--");
   content.contentEditable = "true";
@@ -13665,7 +13657,7 @@ function $p_Lin_diagraph_views_Header$__headerDivNavTheme__Lorg_scalajs_dom_HTML
     document.body.style.cssText = $m_Lin_diagraph_objects_Constants$().bodyCss__T();
     $p_Lin_diagraph_views_Header$__updateThemeIcon__Lorg_scalajs_dom_HTMLAnchorElement__V($thiz, element);
     $p_Lin_diagraph_views_Header$__updateCircleFillColor__V($thiz);
-    return $uZ($thiz.Lin_diagraph_views_Header$__f_graphSelectElement.dispatchEvent(new Event("change")));
+    $f_Lin_diagraph_controller_HeaderCtl__reloadGraph__V($thiz);
   });
   return element;
 }
@@ -13705,9 +13697,7 @@ function $p_Lin_diagraph_views_Header$__headerDivNavLink__T__Lorg_scalajs_dom_HT
 /** @constructor */
 function $c_Lin_diagraph_views_Header$() {
   this.Lin_diagraph_views_Header$__f_theme = null;
-  this.Lin_diagraph_views_Header$__f_graphSelectElement = null;
   this.Lin_diagraph_views_Header$__f_theme = "light";
-  this.Lin_diagraph_views_Header$__f_graphSelectElement = null;
 }
 $c_Lin_diagraph_views_Header$.prototype = new $h_O();
 $c_Lin_diagraph_views_Header$.prototype.constructor = $c_Lin_diagraph_views_Header$;
@@ -37857,7 +37847,7 @@ function $f_Lin_diagraph_views_NodeView__createForeignObject__Lorg_scalajs_dom_S
   foreignObject.style.width = "max-content";
   foreignObject.style.overflow = "visible";
   foreignObject.setAttribute("id", $n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_id);
-  var contentDiv = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), (((("\n        width: max-content;\n        border-radius: 5px;\n        cursor: pointer;\n        background-color: " + (($m_Lin_diagraph_views_Header$().Lin_diagraph_views_Header$__f_theme === "light") ? "#e8e8e8" : "#e8e8e8")) + ";\n        box-shadow: ") + (($n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_format !== "text") ? "0 .5rem 1rem rgba(0, 0, 0, .15)" : "none")) + ";\n        animation: animate-in 1s ease-out forwards;\n      "));
+  var contentDiv = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        width: max-content;\n        border-radius: 5px;\n        cursor: pointer;\n        box-shadow: rgb(119, 119, 119) 0px 0px 0px 1px inset;\n        animation: animate-in 1s ease-out forwards;\n      ");
   $thiz.Lin_diagraph_models_Node__f_titleDiv = $f_Lin_diagraph_views_NodeTitleView__createTitleDiv__Lorg_scalajs_dom_HTMLDivElement($thiz);
   $thiz.Lin_diagraph_models_Node__f_bodySvg = $f_Lin_diagraph_views_NodeView__createBodySvg__Lorg_scalajs_dom_HTMLElement($thiz);
   contentDiv.appendChild($thiz.Lin_diagraph_models_Node__f_titleDiv);
@@ -37871,10 +37861,6 @@ function $f_Lin_diagraph_views_NodeView__createBodySvg__Lorg_scalajs_dom_HTMLEle
     var x1 = $n($n($as_Lin_diagraph_models_Node($thiz)).Lin_diagraph_models_Node__f_props).Lin_diagraph_models_Props__f_format;
     if ((x1 === "node")) {
       var bodyDiv = $f_Lin_diagraph_views_NodeSvgView__nodeSvgView__Lorg_scalajs_dom_HTMLElement($thiz);
-      break matchResult1;
-    }
-    if ((x1 === "text")) {
-      var bodyDiv = $f_Lin_diagraph_views_NodeTextView__nodeTextView__Lorg_scalajs_dom_HTMLDivElement($thiz);
       break matchResult1;
     }
     if ((x1 === "image")) {
