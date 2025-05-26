@@ -64,15 +64,15 @@ object Constants {
   val D_WIDTH: Double  = 100
   val D_HEIGHT: Double = 30
 
-  def color(): String = if theme == "light" then "#333" else "#ccc"
+  def color(): String = if theme == "light" then "#333" else "#eee"
 
-  def bgColor(): String = if theme == "light" then "#ccc" else "#333"
+  def bgColor(): String = if theme == "light" then "#eee" else "#333"
 
-  def svgBaseDotsColor(): String = if theme == "light" then "#333" else "#ccc"
+  def svgBaseDotsColor(): String = if theme == "light" then "#333" else "#eee"
 
   def bodyCss(): String = {
-    val bgColor = if theme == "light" then "#ccc" else "#333"
-    val color   = if theme == "light" then "#333" else "#ccc"
+    val bgColor = if theme == "light" then "#eee" else "#333"
+    val color   = if theme == "light" then "#333" else "#eee"
     s"""
       margin: 0;
       padding: 0;
