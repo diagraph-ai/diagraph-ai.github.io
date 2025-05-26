@@ -66,6 +66,11 @@ trait HeaderCtl {
     } yield child
     nodesToRemove.foreach(mainSVG.removeChild)
   }
+  
+  def reloadGraph(): Unit = {
+    removeOldGraph()
+    mNode.render(mainSVG)
+  }
 
   def saveGraph(): Unit = {
     val graphName = window.prompt("Graph Name : ", graphSelectElement.value)

@@ -77,7 +77,7 @@ object Header extends HeaderCtl {
       document.body.style.cssText = bodyCss()
       updateThemeIcon(element)
       updateCircleFillColor()
-      graphSelectElement.dispatchEvent(new Event("change"))
+      reloadGraph()
     }
     element
   }

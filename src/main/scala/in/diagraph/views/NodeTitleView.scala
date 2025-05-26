@@ -2,7 +2,7 @@ package in.diagraph.views
 
 import in.diagraph.models.Node
 import in.diagraph.objects.Cache.{clearTooltip, tooltip}
-import in.diagraph.objects.Constants.{LIGHT, NODE}
+import in.diagraph.objects.Constants.{LIGHT, NODE, color}
 import in.diagraph.views.Header.theme
 import in.diagraph.objects.px
 import org.scalajs.dom.{Event, MouseEvent, document}
@@ -19,7 +19,7 @@ trait NodeTitleView {
               position: fixed;
               box-sizing: border-box;
               padding: 5px;
-              color: #333;
+              color: rgb(119, 119, 119);
               border-radius: 5px;
               min-width: 100px;
             """)

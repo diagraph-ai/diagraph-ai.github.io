@@ -30,8 +30,7 @@ trait NodeView extends NodeTitleView, NodeSvgView, NodeTextView, NodeImageView, 
         width: max-content;
         border-radius: 5px;
         cursor: pointer;
-        background-color: ${if theme == LIGHT then "#e8e8e8" else "#e8e8e8"};
-        box-shadow: ${if props.format != TEXT then "0 .5rem 1rem rgba(0, 0, 0, .15)" else "none"};
+        box-shadow: rgb(119, 119, 119) 0px 0px 0px 1px inset;
         animation: animate-in 1s ease-out forwards;
       """)
     titleDiv            = createTitleDiv()

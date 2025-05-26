@@ -2,6 +2,7 @@ package in.diagraph.views
 
 import in.diagraph.models.*
 import in.diagraph.objects.Cache.{clearTooltip, tooltip}
+import in.diagraph.objects.Constants.color
 import org.scalajs.dom
 import org.scalajs.dom.html.Div
 import org.scalajs.dom.{Event, MouseEvent, document}
@@ -15,7 +16,7 @@ trait NodeTextView {
           overflow: auto;
           box-sizing: border-box;
           padding: 5px;
-          color: #333;
+          color: ${color()};
           border-radius: 5px;
           min-width: 100px;
         """)
