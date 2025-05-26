@@ -44,7 +44,7 @@ trait NodeView extends NodeTitleView, NodeSvgView, NodeTextView, NodeImageView, 
   def createBodySvg(): HTMLElement = {
     val bodyDiv = props.format match {
       case NODE => nodeSvgView()
-      case TEXT => nodeTextView()
+//      case TEXT => nodeTextView()
       case IMAGE => nodeImageView()
       case _ => throw new IllegalArgumentException("Unsupported format")
     }

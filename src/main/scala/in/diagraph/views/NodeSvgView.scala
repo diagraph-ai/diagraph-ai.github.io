@@ -21,7 +21,7 @@ trait NodeSvgView {
     arrowM.id = "arrow"
     val path   = createElement[HTMLElement](PATH)
     path.setAttribute("d", "M 0 0 L 5 2.5 L 0 5 z")
-    path.style.fill = "#333"
+    path.style.fill = "rgb(119, 119, 119)"
     arrowM.appendChild(path)
 
     defs.appendChild(arrowM)

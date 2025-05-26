@@ -19,7 +19,7 @@ trait NodeTitleView {
               position: fixed;
               box-sizing: border-box;
               padding: 5px;
-              color: rgb(119, 119, 119);
+              color: ${color()};
               border-radius: 5px;
               min-width: 100px;
             """)
