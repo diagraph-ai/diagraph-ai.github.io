@@ -1117,7 +1117,7 @@ function $f_Lin_diagraph_controller_ContextMenuCtl__clearContextMenu__V($thiz) {
 function $p_Lin_diagraph_controller_DocumentCtl$__contentLoadHandler__F1($thiz) {
   return new $c_sjsr_AnonFunction1_$$Lambda$3aa60c34ef08a878abffbf4628007cc68fa3c7ab(((event) => {
     document.body.appendChild($m_Lin_diagraph_views_Header$().header__Lorg_scalajs_dom_HTMLHeadingElement());
-    document.body.appendChild($m_Lin_diagraph_views_MainContent$().content__Lorg_scalajs_dom_HTMLDivElement());
+    document.body.appendChild($m_Lin_diagraph_views_MainContent$().containerGrid__Lorg_scalajs_dom_HTMLDivElement());
     var this$1 = $m_Lin_diagraph_views_Header$();
     $f_Lin_diagraph_controller_HeaderCtl__loadGraph__T__V(this$1, "default");
   }));
@@ -1343,6 +1343,7 @@ function $f_Lin_diagraph_controller_HeaderCtl__loadJsonFromLocal__V($thiz) {
       var this$6 = $n($m_Lin_diagraph_objects_Cache$().Lin_diagraph_objects_Cache$__f_mNode);
       var parent = $m_Lin_diagraph_objects_Cache$().mainSVG__Lorg_scalajs_dom_HTMLElement();
       $f_Lin_diagraph_controller_NodeCtl__render__Lorg_scalajs_dom_HTMLElement__V(this$6, parent);
+      $m_Lin_diagraph_objects_package$().showMNodeInJsonEditor__V();
     });
     reader.readAsText(file);
   });
@@ -1372,6 +1373,7 @@ function $f_Lin_diagraph_controller_HeaderCtl__loadGraph__T__V($thiz, graphName)
     var this$9 = $n($m_Lin_diagraph_objects_Cache$().Lin_diagraph_objects_Cache$__f_mNode);
     var parent = $m_Lin_diagraph_objects_Cache$().mainSVG__Lorg_scalajs_dom_HTMLElement();
     $f_Lin_diagraph_controller_NodeCtl__render__Lorg_scalajs_dom_HTMLElement__V(this$9, parent);
+    $m_Lin_diagraph_objects_package$().showMNodeInJsonEditor__V();
     return (void 0);
   }
 }
@@ -2102,7 +2104,7 @@ function $c_Lin_diagraph_objects_Constants$() {
   this.Lin_diagraph_objects_Constants$__f_NORTH = 3;
   this.Lin_diagraph_objects_Constants$__f_D_WIDTH = 100.0;
   this.Lin_diagraph_objects_Constants$__f_D_HEIGHT = 30.0;
-  this.Lin_diagraph_objects_Constants$__f_headerCss = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n    ";
+  this.Lin_diagraph_objects_Constants$__f_headerCss = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n      background-color: rgb(119, 119, 119);\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivCss = "\n      display: flex;\n      justify-content: space-between;\n      padding: 5px;\n      margin: 5px;\n      border-radius: 10px;\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivNavCss = "\n      display: flex;\n      align-items: center;\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivNavLinkCss = "\n      padding: 10px;\n      text-decoration: none;\n      cursor: pointer;\n    ";
@@ -2154,6 +2156,18 @@ $c_Lin_diagraph_objects_package$.prototype.isBetween__D__D__D__Z = (function(val
 $c_Lin_diagraph_objects_package$.prototype.isOverlap__Lin_diagraph_models_Node__Lin_diagraph_models_Node__Z = (function(node1, node2) {
   return ((($n(node1).east__D() >= $n(node2).west__D()) && ($n(node1).west__D() <= $n(node2).east__D())) && (($n(node1).south__D() >= $n(node2).north__D()) && ($n(node1).north__D() <= $n(node2).south__D())));
 });
+$c_Lin_diagraph_objects_package$.prototype.showMNodeInJsonEditor__V = (function() {
+  var this$2 = $m_Lupickle_legacy$();
+  var t = $m_Lin_diagraph_objects_Cache$().Lin_diagraph_objects_Cache$__f_mNode;
+  $m_Lupickle_legacy$();
+  var escapeUnicode = false;
+  var evidence$4 = $m_Lin_diagraph_models_Node$().derived$ReadWriter__Lupickle_core_Types$ReadWriter();
+  var jsonString = $f_Lupickle_Api__write__O__I__Z__Lupickle_core_Types$Writer__T(this$2, t, 2, escapeUnicode, evidence$4);
+  var jsonEditor = document.getElementById("jsonEditor");
+  if ((jsonEditor !== null)) {
+    jsonEditor.textContent = jsonString;
+  }
+});
 var $d_Lin_diagraph_objects_package$ = new $TypeData().initClass($c_Lin_diagraph_objects_package$, "in.diagraph.objects.package$", ({
   Lin_diagraph_objects_package$: 1
 }));
@@ -2166,20 +2180,15 @@ function $m_Lin_diagraph_objects_package$() {
 }
 /** @constructor */
 function $c_Lin_diagraph_views_MainContent$() {
-}
-$c_Lin_diagraph_views_MainContent$.prototype = new $h_O();
-$c_Lin_diagraph_views_MainContent$.prototype.constructor = $c_Lin_diagraph_views_MainContent$;
-/** @constructor */
-function $h_Lin_diagraph_views_MainContent$() {
-}
-$h_Lin_diagraph_views_MainContent$.prototype = $c_Lin_diagraph_views_MainContent$.prototype;
-$c_Lin_diagraph_views_MainContent$.prototype.content__Lorg_scalajs_dom_HTMLDivElement = (function() {
-  var element = $m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf()));
-  element.style.cssText = "width: 100%; height: 20%; display: flex; justify-content: center; align-items: center;";
+  this.Lin_diagraph_views_MainContent$__f_leftSvg = null;
+  this.Lin_diagraph_views_MainContent$__f_divider = null;
+  this.Lin_diagraph_views_MainContent$__f_rightJson = null;
+  $n_Lin_diagraph_views_MainContent$ = this;
+  var element = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        overflow: auto;\n      ");
   var svgElement = $m_Lin_diagraph_views_package$().createElement__T__O("svg");
   svgElement.id = "mainSvg";
   svgElement.setAttribute("width", "100%");
-  svgElement.setAttribute("height", "2000px");
+  svgElement.setAttribute("height", "100vh");
   var defsElement = $m_Lin_diagraph_views_package$().createElement__T__O("defs");
   var patternElement = $m_Lin_diagraph_views_package$().createElement__T__O("pattern");
   patternElement.setAttribute("id", "dotPattern");
@@ -2201,6 +2210,35 @@ $c_Lin_diagraph_views_MainContent$.prototype.content__Lorg_scalajs_dom_HTMLDivEl
   dotPatternRect.setAttribute("fill", "url(#dotPattern)");
   svgElement.appendChild(dotPatternRect);
   element.appendChild(svgElement);
+  element.id = "leftSvg";
+  this.Lin_diagraph_views_MainContent$__f_leftSvg = element;
+  var element$2 = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        background: #ccc;\n        cursor: col-resize;\n        width: 5px;\n        height: 100%;\n        z-index: 1;\n      ");
+  element$2.id = "divider";
+  this.Lin_diagraph_views_MainContent$__f_divider = element$2;
+  var element$3 = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        overflow: auto;\n      ");
+  var jsonTitle = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLSpanElement__T__Lorg_scalajs_dom_HTMLSpanElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLSpanElement.getClassOf())), "\n        position: relative;\n        top: 90px;\n        left: 10px;\n        font-size: 14px;\n        font-weight: bold;\n        color: rgb(119, 119, 119);\n      ");
+  jsonTitle.innerHTML = "JSON Editor";
+  var jsonEditor = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        width: 100%;\n        height: 100%;\n        top: 100px;\n        padding: 10px;\n        box-sizing: border-box;\n        position: relative;\n        font-family: monospace;\n        font-size: 14px;\n        font-weight: normal;\n        font-style: italic;\n        color: rgb(119, 119, 119);\n        white-space: pre-wrap;\n      ");
+  jsonEditor.id = "jsonEditor";
+  jsonEditor.contentEditable = "true";
+  jsonEditor.setAttribute("data-placeholder", "JSON Editor");
+  element$3.appendChild(jsonTitle);
+  element$3.appendChild(jsonEditor);
+  element$3.id = "rightJson";
+  this.Lin_diagraph_views_MainContent$__f_rightJson = element$3;
+}
+$c_Lin_diagraph_views_MainContent$.prototype = new $h_O();
+$c_Lin_diagraph_views_MainContent$.prototype.constructor = $c_Lin_diagraph_views_MainContent$;
+/** @constructor */
+function $h_Lin_diagraph_views_MainContent$() {
+}
+$h_Lin_diagraph_views_MainContent$.prototype = $c_Lin_diagraph_views_MainContent$.prototype;
+$c_Lin_diagraph_views_MainContent$.prototype.containerGrid__Lorg_scalajs_dom_HTMLDivElement = (function() {
+  var element = $m_Lin_diagraph_views_package$().withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement($m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLDivElement.getClassOf())), "\n        display: grid;\n        grid-template-columns: 2fr 5px 1fr;\n        height: 100vh;\n        width: 100vw;\n      ");
+  element.id = "containerGrid";
+  element.appendChild(this.Lin_diagraph_views_MainContent$__f_leftSvg);
+  element.appendChild(this.Lin_diagraph_views_MainContent$__f_divider);
+  element.appendChild(this.Lin_diagraph_views_MainContent$__f_rightJson);
   return element;
 });
 var $d_Lin_diagraph_views_MainContent$ = new $TypeData().initClass($c_Lin_diagraph_views_MainContent$, "in.diagraph.views.MainContent$", ({
@@ -2386,6 +2424,10 @@ $c_Lin_diagraph_views_package$.prototype.createElement__T__O = (function(tagName
   return ($n($m_Lin_diagraph_views_package$().Lin_diagraph_views_package$__f_svgTags).contains__O__Z(tagName) ? document.createElementNS("http://www.w3.org/2000/svg", tagName) : document.createElement(tagName));
 });
 $c_Lin_diagraph_views_package$.prototype.withStyle__Lorg_scalajs_dom_HTMLDivElement__T__Lorg_scalajs_dom_HTMLDivElement = (function(t, css) {
+  t.style.cssText = css;
+  return t;
+});
+$c_Lin_diagraph_views_package$.prototype.withStyle__Lorg_scalajs_dom_HTMLSpanElement__T__Lorg_scalajs_dom_HTMLSpanElement = (function(t, css) {
   t.style.cssText = css;
   return t;
 });
@@ -13707,7 +13749,7 @@ function $h_Lin_diagraph_views_Header$() {
 $h_Lin_diagraph_views_Header$.prototype = $c_Lin_diagraph_views_Header$.prototype;
 $c_Lin_diagraph_views_Header$.prototype.header__Lorg_scalajs_dom_HTMLHeadingElement = (function() {
   var element = $m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLHeadingElement.getClassOf()));
-  element.style.cssText = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n    ";
+  element.style.cssText = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n      background-color: rgb(119, 119, 119);\n    ";
   element.appendChild($p_Lin_diagraph_views_Header$__headerDiv__Lorg_scalajs_dom_HTMLDivElement(this));
   return element;
 });
