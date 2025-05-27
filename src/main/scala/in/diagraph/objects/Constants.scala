@@ -88,6 +88,7 @@ object Constants {
       left: 0;
       width: 100%;
       z-index: 1000;
+      background-color: rgb(119, 119, 119);
     """
   val headerDivCss    =
     """

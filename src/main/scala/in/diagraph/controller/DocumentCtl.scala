@@ -36,7 +36,7 @@ object DocumentCtl {
   private def contentLoadHandler = { (event: Event) =>
     document.body.appendChild(Header.header())
     // document.body.appendChild(Toolbar.toolbar())
-    document.body.appendChild(MainContent.content())
+    document.body.appendChild(MainContent.containerGrid())
     Header.loadGraph("default")
   }
 
