@@ -3,7 +3,6 @@ package in.diagraph.controller
 import in.diagraph.models.{Graph, Node, Props}
 import in.diagraph.objects.Cache.{mNode, mainSVG, nodeMap, pathMap}
 import in.diagraph.objects.Constants.NODE
-import in.diagraph.objects.showMNodeInJsonEditor
 import in.diagraph.views.Header.graphSelectElement
 import org.scalajs.dom
 import org.scalajs.dom.{Blob, BlobPropertyBag, FileReader, HTMLElement, URL, document, html, window}
@@ -31,11 +30,10 @@ trait HeaderCtl {
         nodeMap = Map()
         pathMap = Map()
         mNode.render(mainSVG)
-        showMNodeInJsonEditor()
       }
       reader.readAsText(file)
     }
-    input.click() // Open file dialog
+    input.click()
   }
 
   def loadGraph(graphName: String): Unit = {
@@ -44,7 +42,6 @@ trait HeaderCtl {
       mNode = Node(Props(id = NODE + "-" + Instant.now().toEpochMilli, format = NODE, x = 100, y = 100))
       nodeMap = Map()
       mNode.render(mainSVG)
-      showMNodeInJsonEditor()
       return
 //    val backend  = FetchBackend()
 //    val response = quickRequest
@@ -96,7 +93,6 @@ trait HeaderCtl {
   def saveGraphToLocal(): Unit = {
     val graphName = window.prompt("Graph Name: ", "default")
     if (graphName == null || graphName.trim.isEmpty) return
-    //val jGraph = Graph(graphName + ".json", mNode)
     val json = write(mNode)
     val blob = new Blob(js.Array(json), BlobPropertyBag("application/json"))
     val url = URL.createObjectURL(blob)

@@ -1,12 +1,10 @@
 package in.diagraph
 
 import in.diagraph.models.Node
-import in.diagraph.objects.Cache.mNode
 import in.diagraph.objects.Constants.*
-import org.scalajs.dom.document
-import upickle.legacy.write
 
 package object objects {
+
   extension (e: Double) {
     def px: String =
       e.toString + "px"
@@ -29,12 +27,5 @@ package object objects {
     if isEast(node1, node2) then EAST
     else if isSouth(node1, node2) then SOUTH
     else INVALID
-
-  def showMNodeInJsonEditor(): Unit = {
-    val jsonString = write(mNode, indent = 2)
-    val jsonEditor = document.getElementById("jsonEditor")
-    if (jsonEditor != null) {
-      jsonEditor.textContent = jsonString
-    }
-  }  
+    
 }

@@ -2,7 +2,7 @@ package in.diagraph.views
 
 import in.diagraph.objects.Constants.*
 import org.scalajs.dom
-import org.scalajs.dom.html.{Div, Span }
+import org.scalajs.dom.html.Div
 import org.scalajs.dom.svg.Element
 
 object MainContent {
@@ -10,14 +10,12 @@ object MainContent {
   def containerGrid(): dom.html.Div = {
     val element = createElement[Div].withStyle(s"""
         display: grid;
-        grid-template-columns: 2fr 5px 1fr;
+        grid-template-columns: 1fr;
         height: 100vh;
         width: 100vw;
       """)
     element.id = "containerGrid"
     element.appendChild(leftSvg)
-    element.appendChild(divider)
-    element.appendChild(rightJson)
     element
   }
 
@@ -58,54 +56,6 @@ object MainContent {
 
     element.appendChild(svgElement)
     element.id = "leftSvg"
-    element
-  }
-
-  val divider: dom.html.Div = {
-    val element = createElement[Div].withStyle(s"""
-        background: #ccc;
-        cursor: col-resize;
-        width: 5px;
-        height: 100%;
-        z-index: 1;
-      """)
-    element.id = "divider"
-    element
-  }
-
-  val rightJson: dom.html.Div = {
-    val element = createElement[Div].withStyle(s"""
-        overflow: auto;
-      """)
-    val jsonTitle = createElement[Span].withStyle(s"""
-        position: relative;
-        top: 90px;
-        left: 10px;
-        font-size: 14px;
-        font-weight: bold;
-        color: rgb(119, 119, 119);
-      """)
-    jsonTitle.innerHTML = "JSON Editor"
-    val jsonEditor = createElement[Div].withStyle(s"""
-        width: 100%;
-        height: 100%;
-        top: 100px;
-        padding: 10px;
-        box-sizing: border-box;
-        position: relative;
-        font-family: monospace;
-        font-size: 14px;
-        font-weight: normal;
-        font-style: italic;
-        color: rgb(119, 119, 119);
-        white-space: pre-wrap;
-      """)
-    jsonEditor.id = "jsonEditor"
-    jsonEditor.contentEditable = "true"
-    jsonEditor.setAttribute("data-placeholder", "JSON Editor")
-    element.appendChild(jsonTitle)
-    element.appendChild(jsonEditor)
-    element.id = "rightJson"
     element
   }
 }
