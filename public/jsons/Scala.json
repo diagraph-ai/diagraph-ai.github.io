@@ -1,0 +1,390 @@
+{
+  "props": {
+    "id": "node-1744040733520",
+    "x": 144,
+    "y": 125,
+    "format": "node",
+    "title": "Scala",
+    "showChildren": true
+  },
+  "nodes": {
+    "node-1745235405965": {
+      "props": {
+        "id": "node-1745235405965",
+        "x": 176.42611694335938,
+        "y": 214.0710048675537,
+        "format": "node",
+        "title": "Collections"
+      },
+      "nodes": {
+        "node-1745583462918": {
+          "props": {
+            "id": "node-1745583462918",
+            "x": 144,
+            "y": 102,
+            "format": "text",
+            "title": "New",
+            "text": "Sets",
+            "toolTipText": "<div>To store unique objects of same type</div><div>val res = Set(\"one\", \"two\")</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 281,
+            "toolTipHeight": 68
+          }
+        },
+        "node-1745583493124": {
+          "props": {
+            "id": "node-1745583493124",
+            "x": 142,
+            "y": 58,
+            "format": "text",
+            "title": "New",
+            "text": "Maps",
+            "toolTipText": "<div>To store key value pairs&nbsp;</div><div>var states = scala.collection.mutable.Map[String, String]()</div><div>var states = scala.collection.mutable.Map(\"AL\" -&gt; \"Alabama\", \"AK\" -&gt; \"Alaska\")</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 507,
+            "toolTipHeight": 92
+          }
+        },
+        "node-1745583353990": {
+          "props": {
+            "id": "node-1745583353990",
+            "x": 21,
+            "y": 145,
+            "format": "text",
+            "title": "New",
+            "text": "Tuples",
+            "toolTipText": "<div>To store immutable objects of different type</div><div>val res = (1, \"test\")</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 306,
+            "toolTipHeight": 69
+          }
+        },
+        "node-1745583317402": {
+          "props": {
+            "id": "node-1745583317402",
+            "x": 21,
+            "y": 100,
+            "format": "text",
+            "title": "New",
+            "text": "Lists",
+            "toolTipText": "<div>To store immutable sequence of objects with same type</div><div>val list = List(1, 2, 3)</div><div><br></div><div>Operations</div><div>:::&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - for concatenation</div><div>::&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- cons - prepend&nbsp;</div><div>If a method ends with :, it will be applied on right operand.</div><div>:+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - for append, rarely used because the time it take to append grows linearly with list size, instead use prepend and reverse.</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 489,
+            "toolTipHeight": 213
+          }
+        },
+        "node-1745583288089": {
+          "props": {
+            "id": "node-1745583288089",
+            "x": 20,
+            "y": 55,
+            "format": "text",
+            "title": "New",
+            "text": "Arrays",
+            "toolTipText": "<div>To store collections of same type values</div><div>val res = new Array[String](3)</div><div>val res1 = Array(1,2,3)</div>",
+            "width": 100,
+            "height": 29.999998092651367,
+            "toolTipWidth": 294,
+            "toolTipHeight": 91
+          }
+        }
+      }
+    },
+    "node-1745575172395": {
+      "props": {
+        "id": "node-1745575172395",
+        "x": 30,
+        "y": 110,
+        "format": "text",
+        "title": "New",
+        "text": "Packaging",
+        "toolTipText": "<div>Packages gives the modularity to the application code</div><div>package com.jtechy</div><div>class Person</div><div><br></div><div>We can define different packages in same file by</div><div>package com.jtechy.model:</div><div>class Person</div><div>package com.jtechy.service:</div><div>class PersonService</div><div><br></div><div>A class can be accessed within the package without a prefix.</div><div>Only nested packaging syntax, the names available outside package also available inside</div><div>If one package per file, then only names available will be in same package/file.</div><div><br></div><div>Imports</div><div>In Scala, packages and their members can be imported by using import clause</div><div>Imported items can be accessed with simple names without FQN</div><div>1) may appear anywhere</div><div>2) can be used for objects also in addition to packages</div><div>3) let you hide or rename some of the imported members</div><div><br></div><div>Access modifies</div><div>1) private - accessed within the class</div><div>2) protected - within the sub class</div><div>3) public - with no explicit modifier, can be accessed from anywhere</div><div><br></div><div>Any definition that goes inside class, can also be placed at top level package</div><div>We can import and use them like classes, objects, or traits</div>",
+        "width": 100,
+        "height": 30,
+        "toolTipWidth": 596,
+        "toolTipHeight": 621
+      }
+    },
+    "node-1745575069691": {
+      "props": {
+        "id": "node-1745575069691",
+        "x": 28,
+        "y": 65,
+        "format": "text",
+        "title": "New",
+        "text": "Introduction",
+        "toolTipText": "<div>The name Scala stands for “scalable language.”</div><div>It runs on both JVM and Javascript platforms and interoperates.</div><div>It can be used to write small scripts to building large systems.</div><div>Scala is a blend of object-oriented and functional programming concepts.</div><div><br></div><div>Scala is an object-oriented language in pure form:&nbsp;</div><div>1) every value is an object&nbsp;</div><div>2) and every operation is a method call.</div><div><br></div><div>Functional programming is guided by two main ideas.&nbsp;</div><div>1) The first idea is that functions are first-class values. (so you can pass)</div><div>2) The operations of a program should map input values to output values rather than change data in place. (Pure functions)</div><div><br></div><div>Features</div><div>1) Scala is compatible</div><div>2) Scala is concise</div><div>3) Scala is high-level</div><div>4) Scala is statically typed</div>",
+        "width": 100.00000762939453,
+        "height": 30.00001335144043,
+        "toolTipWidth": 523,
+        "toolTipHeight": 427
+      }
+    },
+    "node-1745583171695": {
+      "props": {
+        "id": "node-1745583171695",
+        "x": 193,
+        "y": 160,
+        "format": "text",
+        "title": "New",
+        "text": "Functional Programming",
+        "toolTipText": "<div>Use val instead of var, wherever possible</div><div>Prefer immutable objects</div><div>Prefer methods without side effects</div><div><br></div><div>We can write functions within functions</div><div>Inner function can access outer function parameters.</div><div><br></div><div><div>val f1 = (x: Int, y: Int) =&gt; if x &gt; y then y else x</div><div>val f1: (Int, Int) =&gt; Int</div></div><div><br></div><div>Function Literal</div><div>(x: Int) =&gt; x + 1</div><div>args.foreach(_ &gt; 0) - multiple underscores mean multiple parameters not reuse</div><div><br></div><div>Partially applied functions</div><div>def sum(a:Int, b:Int) = a + b</div><div>val s = sum(_, _)</div><div><br></div><div>Closures</div><div>Any function defined with free variables is called open term.</div><div>(x: Int) =&gt; x + more</div><div>At run time, it will create value by binding with more reference available and close</div><div>If free variable changed after closure creation, closure call can see the change.</div><div><br></div><div>Higher Order Functions</div><div>Functions that take functions as parameters.</div><div><br></div><div>Currying</div><div>It is applied to functions that take multiple parameters.</div><div>def oldSum(x: Int, y: Int) = x + y</div><div>def curriedSum(x: Int)(y: Int) = x + y</div><div>When you invoke curriedSum, it will invoke 2 functions calls back to back.</div><div>First function call return function value to second function</div><div>Function with one argument can be put in curly braces</div><div><br></div><div>Last parameter to a function can be repeated, using *</div><div>We can have named arguments and default parameter values while defining the function.</div><div>Tail recursive function will not create new stack for each recursion.</div>",
+        "width": 183.99859619140625,
+        "height": 30.99431800842285,
+        "toolTipWidth": 569,
+        "toolTipHeight": 366
+      }
+    },
+    "node-1745235779909": {
+      "props": {
+        "id": "node-1745235779909",
+        "x": 32.677459716796875,
+        "y": 262.448881149292,
+        "format": "node",
+        "title": "Object Oriented Programming"
+      },
+      "nodes": {
+        "node-1745583028508": {
+          "props": {
+            "id": "node-1745583028508",
+            "x": 173,
+            "y": 244,
+            "format": "text",
+            "title": "New",
+            "text": "traits",
+            "toolTipText": "- these also can have both abstract and non-abstract members<div>- we can extend only one class, but multiple traits can be mixed in</div><div>- abstract classes - thing, trait - behaviour</div><div>- traits solves diamond problem by preferring last trait over the others</div><div>- one constructor arguments, while mixing trait more than once</div><div>- derived traits can not pass constructor arguments to parent trait</div><div><br></div><div>trait Runnable:</div><div>&nbsp; &nbsp;def run(): Unit</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 459,
+            "toolTipHeight": 213
+          }
+        },
+        "node-1745583063407": {
+          "props": {
+            "id": "node-1745583063407",
+            "x": 287,
+            "y": 244,
+            "format": "text",
+            "title": "New",
+            "text": "Generics",
+            "toolTipText": "- to define generic types<div><br><div>class MyList[A]</div><div>class MyMap[K, V]</div></div><div><br></div><div><i>Vairance</i>:</div><div>1. Invariance - class MyList[A]</div><div>&nbsp; &nbsp; val list: MyList[Animal] = MyList[Animal]</div><div>2. Covariance - class MyList[+A]</div><div>&nbsp; &nbsp; val list: MyList[Animal] = MyList[Cat]</div><div>3. Contra-variance - class Trainer[-A]</div><div>&nbsp; &nbsp; val list: Trainer[Cat] = Trainer[Animal]</div><div><br></div><div><i>Bounded Types:</i></div><div>class Cage[A &lt;: Animal]</div><div>class Cage[A &gt;: Animal</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 346,
+            "toolTipHeight": 367
+          }
+        },
+        "node-1745582883920": {
+          "props": {
+            "id": "node-1745582883920",
+            "x": 25,
+            "y": 145,
+            "format": "text",
+            "title": "New",
+            "text": "Class",
+            "toolTipText": "<div>A class is blueprint for creating objects</div><div>class Person</div><div>val p = new Person</div><div><br></div><div>Inside class we will place fields and methods</div><div>Fields - holds the state with val or var</div><div>Methods - holds the executable code that use fields to do work</div><div><br></div><div>Classes can take parameters directly, and they can be used inside body of the class</div><div>The body of the class(not a field or method) will go to primary constructor</div><div>class Person(id:String, name: String)</div><div>&nbsp; &nbsp; print(\"Person object created : \" + name)</div><div>Constructors other than primary constructor are called auxiliary constructors</div><div>class Person</div><div>&nbsp; &nbsp; def this(arg: String) = this</div><div><br></div><div>We can create objects using universal apply method</div><div>Person(\"1\", \"test\")</div><div>We can override default behavior of a class using override,</div><div>class Person</div><div>&nbsp; &nbsp; override def toString = \"\"</div><div><br></div><div>Access Modifiers</div><div>public is default access</div><div>private - will restrict the access to within the class</div><div>Method parameters are vals</div><div>The last computed value of a method will be the return value</div><div>Methods with side affects are called procedures</div><div><br></div><div>case class</div><div>case class Person(id: String, name: String)</div><div>Case classes by default implement default methods such as equals, toString, etc...</div><div>Case classes will generate companion object by default</div><div>In case classes, compiler will store all parameters in fields and accessor methods for them</div><div><br></div><div>class Person(id: String) - id is parameter only</div><div>class Person(val id:String) - id is both parameter and field also</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 503,
+            "toolTipHeight": 351
+          }
+        },
+        "node-1745235791850": {
+          "props": {
+            "id": "node-1745235791850",
+            "x": 20,
+            "y": 50,
+            "format": "text",
+            "title": "New",
+            "text": "<div>Scala has 2 namespaces</div><div>values - fields, methods, packages, singleton objects</div><div>types - class, trait</div>",
+            "toolTipText": "fd stdffadfsaf dfas fds<div>asfsadf sfd</div><div>&nbsp;fsa</div><div>f adf sa</div>",
+            "width": 343.99859619140625,
+            "height": 70.99434661865234,
+            "toolTipWidth": 249,
+            "toolTipHeight": 126
+          }
+        },
+        "node-1745582957070": {
+          "props": {
+            "id": "node-1745582957070",
+            "x": 27,
+            "y": 192,
+            "format": "text",
+            "title": "New",
+            "text": "Inheritance",
+            "toolTipText": "- Scala offer single class inheritance - in abstract classes, multiple inheritance - in traits<div>- Child class will inherit all non-private members of super class</div><div>- we can override val, var, and methods in subclasses</div><div>- we can override the fields in constructor also (class definition)</div><div>- this refers to current instance, super refers to its super class</div><div>- we can prevent overriding using final, sealed(can be over-riden in current file but not in other files)</div><div><br></div><div><b>Access Modifiers:</b></div><div>1) public - the default access level, can be accessed from anywhere</div><div>2) private - only be accessed within the class</div><div>3) protected - accessed within the class and its subclasses</div><div><br></div><div><div><i>class Animal</i></div><div><i>class Cat extends Animal</i></div></div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 640,
+            "toolTipHeight": 327
+          }
+        },
+        "node-1745582983700": {
+          "props": {
+            "id": "node-1745582983700",
+            "x": 25,
+            "y": 244,
+            "format": "text",
+            "title": "New",
+            "text": "Abstract Classes",
+            "toolTipText": "- fields or methods which are unimplemented are called abstract members<div>- classes having abstract members are called abstract classes</div><div>- abstract classes can not be instantiated</div><div>- override is not mandatory while overriding abstract members</div><div>- can have both abstract and not abstract members</div><div><br></div><div><i>abstract class Animal:</i></div><div><i>&nbsp; &nbsp;def sound():Unit</i></div>",
+            "width": 127.99718475341797,
+            "height": 30.99431800842285,
+            "toolTipWidth": 491,
+            "toolTipHeight": 194
+          }
+        },
+        "node-1745582909711": {
+          "props": {
+            "id": "node-1745582909711",
+            "x": 144,
+            "y": 147,
+            "format": "text",
+            "title": "New",
+            "text": "Object",
+            "toolTipText": "<div>Only one instance is maintained in memory</div><div>object Person</div><div>Class and Object those share same name are called companions</div><div>Companions should be in one file</div><div>Companions can access each others private members</div><div>Object methods can be invoked with its name&nbsp;</div><div>Person.work(\"arg\")</div><div>We can instantiate a object with new, so it wont take any parameters.</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 467,
+            "toolTipHeight": 203
+          }
+        }
+      }
+    },
+    "node-1745575267792": {
+      "props": {
+        "id": "node-1745575267792",
+        "x": 29,
+        "y": 159,
+        "format": "text",
+        "title": "New",
+        "text": "Application/Script",
+        "toolTipText": "<div><i>Application</i></div><div>Any object with proper main method can act as starting point of the application.</div><div><br></div><div>object App</div><div>&nbsp; &nbsp; def main(args: String*):Unit =</div><div>&nbsp; &nbsp; &nbsp; &nbsp; print(\"Hi\")</div><div><br></div><div>Scala imports java.lang and scala package members by default</div><div><br></div><div><i>Script</i></div><div>Must end with result of an expression</div><div><br></div>",
+        "width": 140.99432373046875,
+        "height": 28.998579025268555,
+        "toolTipWidth": 450,
+        "toolTipHeight": 282
+      }
+    },
+    "node-1745229023611": {
+      "props": {
+        "id": "node-1745229023611",
+        "x": 30.77410888671875,
+        "y": 214.3564968109131,
+        "format": "node",
+        "title": "Syntax"
+      },
+      "nodes": {
+        "node-1745578256245": {
+          "props": {
+            "id": "node-1745578256245",
+            "x": 22,
+            "y": 106,
+            "format": "text",
+            "title": "New",
+            "text": "Literals",
+            "toolTipText": "<div>A way to write a constant value in code</div><div><br></div><div>Boolean Literals - true, false</div><div><br></div><div>Integer Literals -&nbsp;</div><div>Integes - all numbers not starts with 0</div><div>Hexadecimal - starts with 0x or 0X - all digits + a to f&nbsp;</div><div>We can use _ for large numbers for better readability</div><div>val res = 1_000_000_000</div><div>It the integer literal ends with l or L, its a Long value</div><div><br></div><div>Float point Literals</div><div>Having digits an options decimal point and optional e for exponent</div><div>If the floating point literal ends with f or F, its Float otherwise Double</div><div><br></div><div>Experimental literals to remove size limit of numbers</div><div>BigInt, BigDecimal</div><div><br></div><div>Character Literals</div><div>surrounded with 'A'</div><div><br></div><div>String Literals</div><div>surrounded with \"test\"</div><div>for raw strings use \"\"\"testing&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;multi line s\"\"\"</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 469,
+            "toolTipHeight": 531
+          }
+        },
+        "node-1745578575716": {
+          "props": {
+            "id": "node-1745578575716",
+            "x": 137,
+            "y": 106,
+            "format": "text",
+            "title": "New",
+            "text": "Operators",
+            "toolTipText": "<div>Operators are methods</div><div>Any single parameter methods can be operator</div><div>Infix : 7 + 2</div><div>Prefix : -7&nbsp; &nbsp;( +, -, ! )</div><div>Postfix : 7 toLong</div><div><br></div><div>Arithmetic&nbsp; : +, -, *, /, %</div><div>Relational : &gt;, &lt;, &gt;=, &lt;=, ==, !=</div><div>Logical : &amp;, |, !&nbsp; (&amp;&amp;, || - short circuit)</div><div>Bitwise : &amp;, |, ^, ~</div>",
+            "width": 100,
+            "height": 29.999998092651367,
+            "toolTipWidth": 327,
+            "toolTipHeight": 237
+          }
+        },
+        "node-1745576015689": {
+          "props": {
+            "id": "node-1745576015689",
+            "x": 20,
+            "y": 56,
+            "format": "text",
+            "title": "New",
+            "text": "Variables",
+            "toolTipText": "<div>Variables are used to manage values</div><div>Scala has two kinds of variables,</div><div>1) val - constants, once initialised never changes its value</div><div>2) var - can have values reassigned</div><div>&nbsp;val msg: String&nbsp; = \"Hello, world!\"</div>",
+            "width": 85.99431610107422,
+            "height": 29.999998092651367,
+            "toolTipWidth": 387,
+            "toolTipHeight": 135
+          }
+        },
+        "node-1745578311857": {
+          "props": {
+            "id": "node-1745578311857",
+            "x": 239,
+            "y": 57,
+            "format": "text",
+            "title": "New",
+            "text": "Data Types",
+            "toolTipText": "<div>Boolean&nbsp; &nbsp; &nbsp; &nbsp; - 1 bit</div><div>Byte&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- 1 byte - 8 bits</div><div>Short&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- 2 bytes&nbsp;</div><div>Int&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 4 bytes</div><div>Long&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 8 bytes</div><div>Float&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - 4 bytes</div><div>Double&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- 8 bytes</div><div>Char&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- 2 bytes</div><div>String&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- sequence of chars</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 300,
+            "toolTipHeight": 216
+          }
+        },
+        "node-1745578772161": {
+          "props": {
+            "id": "node-1745578772161",
+            "x": 19,
+            "y": 151,
+            "format": "text",
+            "title": "New",
+            "text": "Control Structures",
+            "toolTipText": "<div>Almost all control structures result in a value in scala</div><div>The assignment operation result a unit value in scala</div><div><br></div><div>Decisions</div><div>if x &gt; y then y else x</div><div><br></div><div>Loops</div><div>while i &lt; args.length do println(args(i))&nbsp; &nbsp; - it returns unit value</div><div><br></div><div>Iterations</div><div>args.foreach(arg =&gt; println(arg))</div><div>for arg &lt;- args do println(arg)&nbsp;</div><div>we can also combine for with if and assignments</div><div>for</div><div>&nbsp; &nbsp; if true</div><div>&nbsp; &nbsp; temp = \"text\"</div><div>do println(\"test\")</div><div><br></div><div>Transformations</div><div>for arg &lt;- args yield arg + \"&amp;\"</div><div>args.map(arg =&gt; arg + \"&amp;\")</div><div><br></div><div>Exception Handling</div><div>try</div><div>&nbsp; &nbsp; if d != 0 then print(\"test\") else throw new Exception</div><div>catch</div><div>&nbsp; &nbsp; case ex: Exception =&gt; print(\"exception\")</div><div>finally</div><div>&nbsp; &nbsp; print(\"complete\")</div><div>Scala does not require you to handle checked exceptions.</div>",
+            "width": 141.9957275390625,
+            "height": 26.995710372924805,
+            "toolTipWidth": 466,
+            "toolTipHeight": 330
+          }
+        },
+        "node-1745578832133": {
+          "props": {
+            "id": "node-1745578832133",
+            "x": 180,
+            "y": 150,
+            "format": "text",
+            "title": "New",
+            "text": "Methods",
+            "toolTipText": "<div>def max(x: Int, y: Int): Int = if (x &gt; y) x else y&nbsp;</div><div><br></div><div>max: (Int,Int)Int</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 305,
+            "toolTipHeight": 97
+          }
+        },
+        "node-1745576225136": {
+          "props": {
+            "id": "node-1745576225136",
+            "x": 121,
+            "y": 56,
+            "format": "text",
+            "title": "New",
+            "text": "Identifiers",
+            "toolTipText": "<div>Alpha-numeric identifiers</div><div>For naming variables, methods, functions, classes, etc...</div><div><br></div><div>Constant Identifiers : NODE_WIDTH</div><div><br></div><div>Operator Identifier : consists of one or more operators</div><div><br></div><div>Mixed Identifier : consists of alpha-numberic identifier followed by _ and an operator identifier</div><div><br></div><div>Literal Identifier : `yeild`</div>",
+            "width": 100,
+            "height": 30,
+            "toolTipWidth": 500,
+            "toolTipHeight": 264
+          }
+        }
+      }
+    }
+  }
+}

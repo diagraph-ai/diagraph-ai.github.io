@@ -45,7 +45,7 @@ object Header extends HeaderCtl {
 
   private def headerDivNavRight() = {
     val element = headerDivNav()
-//    element.appendChild(headerDivNavSelectBox())
+    element.appendChild(headerDivNavSelectBox())
     element.appendChild(headerDivNavLoadButton())
     element.appendChild(headerDivNavSaveButton())
     element.appendChild(headerDivNavTheme())
@@ -114,9 +114,7 @@ object Header extends HeaderCtl {
     graphSelectElement.id = GRAPH_SELECT
     graphSelectElement.style.cssText = headerGraphSelectCss
 
-    // Fetch and parse the value from the hidden graphs element
-    val graphsValue = document.getElementById("graphs").asInstanceOf[dom.html.Input].value
-    val graphNames  = graphsValue.split(",").toList
+    val graphNames  = List("java", "scala", "python", "javascript") // Example graph names
 
     // Populate the select box with graph names
     graphNames.foreach { graphName =>

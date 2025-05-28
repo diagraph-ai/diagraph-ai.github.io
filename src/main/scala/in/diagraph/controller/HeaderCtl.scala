@@ -43,17 +43,17 @@ trait HeaderCtl {
       nodeMap = Map()
       mNode.render(mainSVG)
       return
-//    val backend  = FetchBackend()
-//    val response = quickRequest
-//      .get(uri"http://localhost:9000/getGraph/$graphName")
-//      // .get(uri"https://www.diagraph.in/maps-get/$graphName")
-//      .send(backend)
-//    response.onComplete { resp =>
-//      if resp.get.body.nonEmpty then mNode = read[Node](resp.get.body)
-//      else mNode = Node(Props(id = NODE + "-" + Instant.now().toEpochMilli, format = NODE, x = 100, y = 100))
-//      nodeMap = Map()
-//      mNode.render(mainSVG)
-//    }
+    val backend  = FetchBackend()
+    val response = quickRequest
+      .get(uri"http://localhost:9000/getGraph/$graphName")
+      // .get(uri"https://www.diagraph.in/maps-get/$graphName")
+      .send(backend)
+    response.onComplete { resp =>
+      if resp.get.body.nonEmpty then mNode = read[Node](resp.get.body)
+      else mNode = Node(Props(id = NODE + "-" + Instant.now().toEpochMilli, format = NODE, x = 100, y = 100))
+      nodeMap = Map()
+      mNode.render(mainSVG)
+    }
   }
 
   def removeOldGraph(): Unit = {
