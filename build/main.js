@@ -2102,7 +2102,7 @@ function $c_Lin_diagraph_objects_Constants$() {
   this.Lin_diagraph_objects_Constants$__f_NORTH = 3;
   this.Lin_diagraph_objects_Constants$__f_D_WIDTH = 100.0;
   this.Lin_diagraph_objects_Constants$__f_D_HEIGHT = 30.0;
-  this.Lin_diagraph_objects_Constants$__f_headerCss = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n      background-color: rgb(119, 119, 119);\n    ";
+  this.Lin_diagraph_objects_Constants$__f_headerCss = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivCss = "\n      display: flex;\n      justify-content: space-between;\n      padding: 5px;\n      margin: 5px;\n      border-radius: 10px;\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivNavCss = "\n      display: flex;\n      align-items: center;\n    ";
   this.Lin_diagraph_objects_Constants$__f_headerDivNavLinkCss = "\n      padding: 10px;\n      text-decoration: none;\n      cursor: pointer;\n    ";
@@ -13713,7 +13713,7 @@ function $h_Lin_diagraph_views_Header$() {
 $h_Lin_diagraph_views_Header$.prototype = $c_Lin_diagraph_views_Header$.prototype;
 $c_Lin_diagraph_views_Header$.prototype.header__Lorg_scalajs_dom_HTMLHeadingElement = (function() {
   var element = $m_Lin_diagraph_views_package$().createElement__s_reflect_ClassTag__O(new $c_s_reflect_ClassTag$GenericClassTag($d_Lorg_scalajs_dom_HTMLHeadingElement.getClassOf()));
-  element.style.cssText = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n      background-color: rgb(119, 119, 119);\n    ";
+  element.style.cssText = "\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      z-index: 1000;\n    ";
   element.appendChild($p_Lin_diagraph_views_Header$__headerDiv__Lorg_scalajs_dom_HTMLDivElement(this));
   return element;
 });
